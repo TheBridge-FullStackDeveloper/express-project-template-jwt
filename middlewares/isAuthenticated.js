@@ -6,7 +6,7 @@ function isAuthenticated(req, res, next) {
       return next(err);
     }
     if (!user) {
-      return unauthorized(res);
+      return res.status(401);
     }
     next();
   })(req, res, next);
